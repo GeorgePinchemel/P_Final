@@ -11,3 +11,4 @@ VALUES ('Administrador', 'Administrador', 'admin', 'admin', 'admin@cairupay.com'
 -- INSERT INTO usuario (nome, cargo, login, senha, email) 
 -- VALUES ('Nome do Usuário', 'Cargo', 'login', 'senha', 'email@exemplo.com');
 
+

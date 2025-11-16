@@ -52,3 +52,4 @@ CREATE INDEX idx_pagamento_divida ON pagamento(idDivida);
 CREATE INDEX idx_pagamento_data ON pagamento(dataPagamento);
 CREATE INDEX idx_cliente_documento ON cliente(documento);
 
+

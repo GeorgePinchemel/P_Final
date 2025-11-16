@@ -113,6 +113,5 @@ public class TelaPrincipal extends JFrame {
         }
     }
     
-    // Método main removido - a TelaPrincipal agora é aberta pela TelaLogin após autenticação
 }
 
