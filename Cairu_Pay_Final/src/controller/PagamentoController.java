@@ -59,6 +59,21 @@ public class PagamentoController {
         dao.inserir(pagamento);
     }
     
+    public void atualizarPagamento(Pagamento pagamento) throws SQLException {
+        // Validar se o pagamento existe
+        Pagamento pagamentoExistente = dao.buscarPorId(pagamento.getIdpag());
+        if (pagamentoExistente == null) {
+            throw new SQLException("Pagamento não encontrado!");
+        }
+        
+        // Validar valor mínimo
+        if (pagamento.getValorPago() <= 0) {
+            throw new SQLException("O valor pago deve ser maior que zero!");
+        }
+        
+        dao.atualizar(pagamento);
+    }
+    
     public Pagamento buscarPorId(int idpag) throws SQLException {
         return dao.buscarPorId(idpag);
     }

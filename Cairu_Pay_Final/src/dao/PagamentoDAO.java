@@ -20,6 +20,18 @@ public class PagamentoDAO {
         }
     }
     
+    public void atualizar(Pagamento pagamento) throws SQLException {
+        String sql = "UPDATE pagamento SET idDivida=?, dataPagamento=?, valorPago=? WHERE idpag=?";
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, pagamento.getDivida().getCodigo());
+            stmt.setDate(2, new java.sql.Date(pagamento.getDataPagamento().getTime()));
+            stmt.setDouble(3, pagamento.getValorPago());
+            stmt.setInt(4, pagamento.getIdpag());
+            stmt.executeUpdate();
+        }
+    }
+    
     public void excluir(int idpag) throws SQLException {
         String sql = "DELETE FROM pagamento WHERE idpag=?";
         try (Connection conn = Conexao.getConnection();

@@ -42,6 +42,13 @@ public class DividaController {
         dao.inserir(divida);
     }
     
+    public void atualizarDivida(Divida divida) throws SQLException {
+        if (divida.getCredor().getIdCliente() == divida.getDevedor().getIdCliente()) {
+            throw new SQLException("O credor deve ser diferente do devedor!");
+        }
+        dao.atualizar(divida);
+    }
+    
     public Divida buscarPorId(int codigo) throws SQLException {
         return dao.buscarPorId(codigo);
     }
@@ -69,5 +76,4 @@ public class DividaController {
         return dao.estaPaga(codigo);
     }
 }
-
 

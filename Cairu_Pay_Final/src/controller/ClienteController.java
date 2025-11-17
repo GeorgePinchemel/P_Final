@@ -24,6 +24,10 @@ public class ClienteController {
         dao.inserir(cliente);
     }
     
+    public void atualizarCliente(Cliente cliente) throws SQLException {
+        dao.atualizar(cliente);
+    }
+    
     public Cliente buscarPorId(int id) throws SQLException {
         return dao.buscarPorId(id);
     }
@@ -43,5 +47,4 @@ public class ClienteController {
         dao.excluir(id);
     }
 }
-
 
